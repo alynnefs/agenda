@@ -1,0 +1,28 @@
+<html data-ng-app="agenda">
+  <head>
+    <title>Agenda</title>
+    <script type="text/javascript" src="scripts/angular.js"></script>
+    <script type="text/javascript" src="js/msgs.js"></script>
+  </head>
+  <body data-ng-controller="Agenda">
+    <h1>Contatos</h1>
+    <fieldset class="row-fluid">
+      <legend>Novo contato</legend>
+      <input type="text" placeholder="Nome" data-ng-model="novocont.nome"/><br/>
+      <input type="text" placeholder="Endereço" data-ng-model="novocont.endereco"/><br/>
+      <input type="text" placeholder="Telefone" data-ng-model="novocont.telefone"/><br/>
+
+
+      <button data-ng-click="sendmsg()">Send</button>
+    </fieldset>
+    <fieldset>
+        <legend>Contatos salvos</legend>
+        <div data-ng-repeat="c in contatos">
+          <h2>{{c.nome}}</h2>
+          <p>{{c.endereco}}</p>
+          <p>{{c.telefone}}</p>
+          <button data-ng-click="rmv(c.idcontato)">Remover contato</button>
+        </div>
+    </fieldset>
+  </body>
+</html>
