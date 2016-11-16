@@ -23,7 +23,7 @@ angular.module("agenda").controller("Agenda",function($scope,$http){
 
   $scope.initagenda();
   
-  $scope.rmv=function(id){
+  $scope.removerContato=function(id){
     $http({
       method : "DELETE",
       url : "contatos/"+id,
@@ -35,7 +35,7 @@ angular.module("agenda").controller("Agenda",function($scope,$http){
     });
   };  
 
-  $scope.upd=function(_c){
+  $scope.atualizarContato=function(_c){
     id = _c.idcontato;
     delete _c["idcontato"];
     delete _c["$$hashKey"];
@@ -55,12 +55,12 @@ angular.module("agenda").controller("Agenda",function($scope,$http){
   
 
 
-  $scope.edt=function(id){
+  $scope.editarContato=function(id){
     $scope.isEditable[id]=true;
     $scope.initagenda();
   };
 
-  $scope.sendmsg=function(){
+  $scope.adicionarContato=function(){
     $http({
       method : "POST",
       url : "contatos",

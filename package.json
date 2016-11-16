@@ -1,16 +1,16 @@
 {
   "name": "agenda",
   "version": "0.0.1",
-  "description": "",
+  "description": "- npm install knex -g -s - npm install express -s - npm install morgan -s - npm install sqlite3 -s - npm install browserify -s - npm install angular -s - npm install budo -s - npm install -g nodemon",
   "main": "index.js",
   "scripts": {
     "start": "node index.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "alynne@lit.ifce.edu.br",
-  "license": "",
+  "license": "BSD-2-Clause",
   "dependencies": {
-    "angular":"latest",
+    "angular": "latest",
     "body-parser": "~1.13.3",
     "browserify": "^13.1.1",
     "cookie-parser": "~1.4.3",
@@ -20,5 +20,12 @@
     "morgan": "^1.7.0",
     "sqlite3": "latest"
   },
-  "devDependencies": {}
+  "devDependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/alynnefs/agenda.git"
+  },
+  "bugs": {
+    "url": "https://github.com/alynnefs/agenda/issues"
+  }
 }
