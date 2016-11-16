@@ -11,8 +11,6 @@
       <input type="text" placeholder="Nome" data-ng-model="novocont.nome"/><br/>
       <input type="text" placeholder="Endereço" data-ng-model="novocont.endereco"/><br/>
       <input type="text" placeholder="Telefone" data-ng-model="novocont.telefone"/><br/>
-
-
       <button data-ng-click="sendmsg()">Send</button>
     </fieldset>
     <fieldset>
@@ -22,6 +20,18 @@
           <p>{{c.endereco}}</p>
           <p>{{c.telefone}}</p>
           <button data-ng-click="rmv(c.idcontato)">Remover contato</button>
+          <button data-ng-click="edt(c.idcontato)">Editar contato</button>
+          
+          <div ng-show="isEditable[c.idcontato]">
+             <fieldset class="row-fluid" >
+             <legend>edit contato</legend>
+             <input type="text" placeholder="Nome" data-ng-model="c.nome"/><br/>
+             <input type="text" placeholder="Endereço" data-ng-model="c.endereco"/><br/>
+             <input type="text" placeholder="Telefone" data-ng-model="c.telefone"/><br/>
+             <button data-ng-click="upd(c)">Atualizar</button>
+             </fieldset>
+          </div>
+          
         </div>
     </fieldset>
   </body>

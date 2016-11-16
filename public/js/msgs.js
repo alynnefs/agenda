@@ -1,6 +1,8 @@
 angular.module("agenda",[]);
 angular.module("agenda").controller("Agenda",function($scope,$http){
 
+  $scope.isEditable = [];
+
   $scope.initagenda=function(){
     $scope.novamsg={
       nome:"",
@@ -15,6 +17,7 @@ angular.module("agenda").controller("Agenda",function($scope,$http){
       }
     }).then(function(res){
       $scope.contatos=res.data;
+      $scope.isEditable.push(false);
     });
   };
 
@@ -31,6 +34,31 @@ angular.module("agenda").controller("Agenda",function($scope,$http){
       $scope.initagenda();
     });
   };  
+
+  $scope.upd=function(_c){
+    id = _c.idcontato;
+    delete _c["idcontato"];
+    delete _c["$$hashKey"];
+    
+    $http({
+      method : "PUT",
+      url : "contatos/"+id,
+      headers : {
+        "Content-Type" : "application/json"
+      },
+      data:JSON.stringify(_c)      
+    }).then(function(res){
+      $scope.isEditable[id]=false;
+      $scope.initagenda();
+    });
+  };  
+  
+
+
+  $scope.edt=function(id){
+    $scope.isEditable[id]=true;
+    $scope.initagenda();
+  };
 
   $scope.sendmsg=function(){
     $http({
