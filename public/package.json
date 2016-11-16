@@ -1,0 +1,19 @@
+{
+  "name": "public",
+  "version": "0.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+    "build": "browserify js/msgs.js -o build.js"
+  },
+  "author": "",
+  "license": "BSD-2-Clause",
+  "devDependencies": {
+    "browserify": "~13.1.1",
+    "budo": "~9.2.2"
+  },
+  "dependencies": {
+    "angular": "~1.5.8"
+  }
+}

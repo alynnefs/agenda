@@ -14,8 +14,6 @@ app.use(morgan("dev","immediate"));
 
 // rotas
 app.use("/contatos", require('./routes/contatos')(knex));
-app.use("/scripts", express.static(__dirname + '/node_modules/angular'));
-
 
 app.use(express.static("public"));
 

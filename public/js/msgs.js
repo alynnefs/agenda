@@ -1,3 +1,4 @@
+require("angular");
 angular.module("agenda",[]);
 angular.module("agenda").controller("Agenda",function($scope,$http){
 
