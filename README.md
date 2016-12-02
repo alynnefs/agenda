@@ -1,5 +1,18 @@
 # agenda
 
+Criar projeto de setup duplo
+
+- Lado do serviço deve ter Knex, express, morgan
+- Deve ser uma agenda de contato (id, nome, endereço e telefone)
+- Lado do cliente deve ter Browserify e Angular
+- Os dois setups devem ser gerenciados pelo npm
+- O BD é de livre escolha, contanto que seja compatível com o knex
+- O aplicativo deve ser um CRUD completo com interface web
+
+
+Comandos úteis:
+
+
 - npm install knex -g -s
 - npm install express -s
 - npm install morgan -s
